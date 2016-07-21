@@ -353,7 +353,8 @@ the output, in some cases."
           (setq jsshell--awaiting-command-prompt t
                 jsshell--input-recd-msg "")
           (if (string= old-msg "")
-              "\ninput received.\n"
+              ;; "\ninput received.\n"
+              "\n"
             old-msg))
 
       string)))
@@ -693,7 +694,7 @@ Returns t if successful.
 
     (jsshell--enter-multiline-mode buffer)
     (comint-simple-send (get-buffer-process buffer)
-                        jscode)))
+                        (concat jscode "\n"))))
 
 
 ;;;###autoload

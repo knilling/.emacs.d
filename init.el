@@ -14,6 +14,9 @@
 ;; Add jsshell to the load path
 (add-to-list 'load-path "~/.emacs.d/jsshell/")
 
+;; Add customizations to the load path
+(add-to-list 'load-path "~/.emacs.d/customizations/")
+
 ;; JSShell
 (require 'jsshell-bundle)
 ;;; Borrowed this technique from http://superuser.com/a/684404
@@ -21,3 +24,9 @@
   (define-key js-mode-map "\C-x\C-e" 'jsshell-send-last-sexp)
   (define-key js-mode-map "\C-c\C-e" 'jsshell-send-region))
 
+;; Borrowing these from https://github.com/flyingmachine/emacs-for-clojure
+;; These customizations make editing a bit nicer.
+(load "editing.el")
+
+;; Hard-to-categorize customizations
+(load "misc.el")

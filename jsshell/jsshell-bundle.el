@@ -133,7 +133,8 @@
   :group 'jsshell)
 
 (defcustom jsshell-profile
-  (list "c:\\dev\\js\\json2.js")
+  ;; (list "c:\\dev\\js\\json2.js")
+  nil
   "List of filenames, each one a Javascript source file. This module
 will load each JS module into the jsshell as the jsshell starts."
   :group 'jsshell)

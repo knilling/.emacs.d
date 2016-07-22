@@ -4,6 +4,12 @@
 ;; diable the toolbar
 (tool-bar-mode -1)
 
+;; enable line numbers
+(global-linum-mode t)
+
+;; don't wrap lines, by default
+(set-default 'truncate-lines t)
+
 (require 'package) 
 (setq package-archives '(;;("gnu" . "https://elpa.gnu.org/packages/")
                          ("marmalade" . "https://marmalade-repo.org/packages/")

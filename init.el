@@ -34,6 +34,11 @@
   (define-key js-mode-map "\C-c\C-b" 'jsshell-send-buffer-and-pop)
   (define-key js-mode-map "\C-cl"    'jsshell-load-file-and-pop))
 
+;; restcleint
+;;; Add jsshell to the load path
+(add-to-list 'load-path "~/.emacs.d/restclient/")
+(require 'restclient)
+
 ;; Borrowing these from https://github.com/flyingmachine/emacs-for-clojure
 ;; These customizations make editing a bit nicer.
 (load "editing.el")

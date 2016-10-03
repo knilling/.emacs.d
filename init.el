@@ -57,3 +57,7 @@
 
 ;; Hard-to-categorize customizations
 (load "misc.el")
+
+;; load theme
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(load-theme 'cyberpunk t)

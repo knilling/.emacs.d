@@ -30,6 +30,9 @@
 (add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
 
 (package-initialize)
+; fetch the list of packages available 
+(unless package-archive-contents
+  (package-refresh-contents))
 
 ;; Customize load path
 (add-to-list 'load-path "~/.emacs.d/customizations/")

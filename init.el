@@ -10,6 +10,11 @@
 ;; don't wrap lines, by default
 (set-default 'truncate-lines t)
 
+;; adjust default font
+(set-face-attribute 'default nil :height 140)
+(if (eq system-type 'windows-nt)
+    (set-face-attribute 'default nil :family "Consolas"))
+
 (require 'package) 
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/") t)

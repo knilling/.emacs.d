@@ -15,6 +15,10 @@
 (if (eq system-type 'windows-nt)
     (set-face-attribute 'default nil :family "Consolas"))
 
+;;;;;;;;;;;;;;
+;; PACKAGES ;;
+;;;;;;;;;;;;;;
+;; https://melpa.org/#/getting-started
 (require 'package) 
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/") t)
@@ -22,6 +26,7 @@
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/")))
 
+;; https://marmalade-repo.org/
 (add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
 
 (package-initialize)

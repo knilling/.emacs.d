@@ -21,22 +21,25 @@
 
 (package-initialize)
 
-;; Add jsshell to the load path
-(add-to-list 'load-path "~/.emacs.d/jsshell/")
-
 ;; Add customizations to the load path
 (add-to-list 'load-path "~/.emacs.d/customizations/")
 
-;; JSShell
-(require 'jsshell-bundle)
-;;; Borrowed this technique from http://superuser.com/a/684404
-(with-eval-after-load 'js
-  (define-key js-mode-map "\C-x\C-e" 'jsshell-send-last-sexp)
-  (define-key js-mode-map "\C-c\C-e" 'jsshell-send-region)
-  (define-key js-mode-map "\C-\M-x"  'jsshell-send-last-sexp-and-pop)
-  (define-key js-mode-map "\C-cb"    'jsshell-send-buffer)
-  (define-key js-mode-map "\C-c\C-b" 'jsshell-send-buffer-and-pop)
-  (define-key js-mode-map "\C-cl"    'jsshell-load-file-and-pop))
+(if (not (eq system-type 'darwin))
+    (progn
+      ;; JSShell
+      ;;; Add jsshell to the load path
+      (add-to-list 'load-path "~/.emacs.d/jsshell/")
+      (require 'jsshell-bundle)
+      ;;; Borrowed this technique from http://superuser.com/a/684404
+      (with-eval-after-load 'js
+        (define-key js-mode-map "\C-x\C-e" 'jsshell-send-last-sexp)
+        (define-key js-mode-map "\C-c\C-e" 'jsshell-send-region)
+        (define-key js-mode-map "\C-\M-x"  'jsshell-send-last-sexp-and-pop)
+        (define-key js-mode-map "\C-cb"    'jsshell-send-buffer)
+        (define-key js-mode-map "\C-c\C-b" 'jsshell-send-buffer-and-pop)
+        (define-key js-mode-map "\C-cl"    'jsshell-load-file-and-pop))
+      )
+  )
 
 ;; restcleint
 ;;; Add jsshell to the load path

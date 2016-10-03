@@ -90,7 +90,9 @@
 ;; environment variables from the user's shell.
 ;; https://github.com/purcell/exec-path-from-shell
 (if (eq system-type 'darwin)
-    (require 'exec-path-from-shell))
+    (progn
+      (require 'exec-path-from-shell)
+      (exec-path-from-shell-initialize)))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
